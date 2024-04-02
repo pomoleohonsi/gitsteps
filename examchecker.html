@@ -43,15 +43,13 @@
         <!-- nav bar -->
         <div id="navbar">
             <div>
-                <i class="fa fa-bars" style="color: white;"></i>
                 <h5 style="color: white; margin: 0px;">EXAM REGISTRATION WEBSITE</h5>
-
             </div>
             <div>
                 <ul>
                     <li>ABOUT US</li>
                     <li href="">CONTACT US</li>
-                    <li href="">LOGIN</li>
+                    <li href="" onclick="accessObjectByEmailAndRandomNumber()">LOGIN</li>
                     <li onclick="sup()">SIGN UP</li>
                 </ul>
             </div>
@@ -71,52 +69,52 @@
 
         <center>
             <div style="display: none;" id="sign_up">
-                <form action="" id="formS" style="width: 60%;">
+                <form action="" id="myForm" style="width: 60%;">
                     <h4>CREATE YOUR PROFILE</h4>
                     <div id="lain">
                         <label for="">Surname:</label>
                         <br>
-                        <input type="text">
+                        <input type="text" required id="sname">
                     </div>
                     <div id="lain">
                         <label for="">First name :</label>
                         <br>
-                        <input type="text">
+                        <input type="text" required id="fname">
                     </div>
                     <div id="lain">
                         <label for="">Other name :</label>
                         <br>
-                        <input type="text">
+                        <input type="text" required id="oname">
                     </div>
                     <div id="lain">
                         <label for="">Email :</label>
                         <br>
-                        <input type="email">
+                        <input type="email" required id="email">
                     </div>
                     <div id="lain">
                         <label for="">Phone number :</label>
                         <br>
-                        <input type="number">
+                        <input type="number" required>
                     </div>
                     <div id="lain">
                         <label for="">date of birth :</label>
                         <br>
-                        <input type="date">
+                        <input type="date" required>
                     </div>
                     <div id="lain">
                         <label for="">password:</label>
                         <br>
-                        <input type="password" id="password">
+                        <input type="password" id="password" required>
                     </div>
                     <div id="lain">
                         <label for="">confirm password:</label>
                         <br>
-                        <input type="password" id="confirm_password" onkeyup='check();' >
+                        <input type="password" id="confirm_password" onkeyup='check();' required>
                         <span id='message'></span>
                     </div>
                     <div class="row">
                         <div class="col-6">
-                            <button class="btn btn-success">Submit</button>
+                            <button class="btn btn-success" onclick="generateRandomNumber()">Submit</button>
                         </div>
                         <div class="col-6">
                             <button class="btn btn-danger">Cancel</button>
@@ -138,7 +136,7 @@
     function login() {
         document.getElementById('login').style.display = "block"
         document.getElementById('sign_up').style.display = "none"
-
+        document.getElementById('instruct').innerHTML = "Please provide your email and phone number. If you don't wish to continue click cancel"
     }
 
     function check() {
@@ -151,6 +149,60 @@
             document.getElementById('message').innerHTML = 'not matching';
         }
     }
+
+    var formDataArray = [];
+    function generateRandomNumber() {
+        // Check if all form fields are filled
+        var allFieldsFilled = true;
+        var fields = document.querySelectorAll('input[type="text"], input[type="number"], input[type="email"], input[type="date"], input[type="password"]');
+        for (var i = 0; i < fields.length; i++) {
+            if (fields[i].value.trim() === "") {
+                allFieldsFilled = false;
+                break;
+            }
+        }
+
+        if (allFieldsFilled) {
+            // Generate a 5-digit random number
+            var randomNumber = Math.floor(10000 + Math.random() * 90000);
+            alert("Your Registration Number is: " + randomNumber);
+
+            // Select the form
+            const form = document.getElementById('myForm');
+
+            // Event listener for form submission
+            form.addEventListener('submit', function (event) {
+                // Prevent default form submission behavior
+                event.preventDefault();
+
+                // Retrieve form data
+                const sname = document.getElementById('sname').value;
+                const fname = document.getElementById('fname').value;
+                const oname = document.getElementById('oname').value;
+                const email = document.getElementById('email').value;
+
+                // Store the form data in an object
+                const formData = {
+                    sname: sname,
+                    fname: fname,
+                    oname: oname,
+                    email: email
+                };
+
+                // Store the form data in array
+                formDataArray.push(JSON.stringify(formData));
+                formDataArray.push(randomNumber);
+                alert(formDataArray);
+            });
+
+            sessionStorage.formDataArray = JSON.stringify(formDataArray);
+        } else {
+            alert("Please fill in all fields");
+        }
+    }
+
+
+
 </script>
 
 </html>
