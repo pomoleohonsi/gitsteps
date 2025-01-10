@@ -1,0 +1,156 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    font-family: sans-serif;
+}
+body{
+    background-color: whitesmoke;
+}
+nav{
+    background-color: brown;
+    padding: 20px;
+}
+.link{
+    color: #fff;
+  
+}
+.peace{
+    float: right;
+    color: #fff;
+}
+.baby{
+    display: none;
+}
+.baby a{
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    padding: 15px 0;
+    text-transform: uppercase;
+}
+.baby a:hover{
+  
+    color: #fff;
+    font-weight: 700;
+    transition: .4s;
+}
+.image_profile{
+    width: 100%;
+    object-fit: cover;
+    height: 500px;
+    filter: brightness(35%);
+}
+.image_body{
+    position: relative;
+}
+.main_text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    letter-spacing: 1.4px;
+    line-height: 40px;
+    max-width: 600px;
+    text-align: center;
+}
+.main_text button{
+    border: 0;
+    padding: 10px;
+    background-color: brown;
+    color: #fff;
+}
+.concern{
+    border: 0;
+    padding: 5px;
+    background-color: brown;
+    color: #fff;
+}
+/* for the main body_how_it_works */
+.secon_man{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+@media screen and (max-width: 800px) {
+    .secon_man{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+}
+
+@media screen and (max-width: 400px) {
+    .secon_man{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    
+}
+.child{
+    padding: 20px;
+    background-color: white;
+    margin: 10px;
+    border: 1px solid #ccc;
+}
+.child *{
+    line-height: 30px;
+}
+.titles{
+    color: brown;
+    text-align: center;
+    margin: 10px;
+}
+.about{
+    background-color: white;
+    padding: 20px;
+    line-height: 30px;
+    border: 1px solid #ccc;
+}
+.footer{
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+.maion_logger{
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    max-width: 600px;
+    margin-top: 40px;
+    border-radius: 7px;
+}
+.maion_logger label, input{
+    display: block;
+}
+.logger{
+    display: block;
+}
+.maion_logger input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: whitesmoke;
+    margin: 10px 0;
+    border-radius: 7px;
+}
+.maion_logger label{
+    text-align: left;
+}
+.maion_logger h1{
+    text-align: left;
+    color: brown;
+    margin: 15px 0;
+}
+.maion_logger button{
+    background-color: brown;
+    color: #fff;
+    padding: 10px;
+    border: 0;
+    width: 100%;
+    border-radius: 7px;
+    margin: 7px 0;
+}

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,31 +23,26 @@
         li {
             margin-right: 10px;
         }
-
-        a {
+        a{
             color: white;
             text-decoration: none;
         }
-
         input,
         Select {
             /* border-radius: 10px; */
             width: 37vh;
             height: 23px;
         }
-
-        .formItem {
+        .formItem{
             margin-bottom: 5px;
         }
-
-        #form-header {
+        #form-header{
             /* background-color: black; */
             color: rebeccapurple;
             text-align: center;
         }
     </style>
 </head>
-
 <body>
     <div id="myContainer">
         <div id="navbar">
@@ -65,32 +59,24 @@
                 </ul>
             </div>
         </div>
-
-
-
-        
         <img src="AAU_Library.PNG" alt="AAU Library" width="100%" height="300vh">
         <div>
-            <form action="" id="myForm"
-                style="width: 50%; text-align: center; margin-left: 25%; background-color: rgba(246, 247, 250, 0.438); margin-top: 0%;">
+            <form action="" id="myForm" style="width: 50%; text-align: center; margin-left: 25%; background-color: rgba(246, 247, 250, 0.438); margin-top: 0%;">
                 <h2 id="form-header">Certificate Verification</h2>
                 <div class="formItem">
-                    <label for="degree">Degree Title</label>
-                    <select name="" id="degree" style="margin-left: 42px;" required>
-                        <option value=""></option>
-                        <option value="B.SC">B.SC</option>
-                    </select>
+                    <label for="">Degree Title</label>
+                    <input type="text" name="" id="" style="margin-left: 42px; width: 36vh;">
                 </div>
                 <div class="formItem">
-                    <label for="institution">Institution</label>
-                    <select name="" id="institution" style="margin-left: 56px;" required>
+                    <label for="">Institution</label>
+                    <select name="" id="" style="margin-left: 56px;">
                         <option value=""></option>
                         <option value="">Ambrose Alli University</option>
                     </select>
                 </div>
                 <div class="formItem">
-                    <label for="year">Year of Graduation</label>
-                    <select name="" id="year" required>
+                    <label for="">Year of Graduation</label>
+                    <select name="" id="">
                         <option value=""></option>
                         <option value="">2000</option>
                         <option value="">2001</option>
@@ -115,42 +101,27 @@
                         <option value="">2020</option>
                         <option value="">2021</option>
                         <option value="">2022</option>
-                        <option value="">2023</option>
-                        <option value="">2024</option>
                     </select>
                 </div>
                 <div class="formItem">
-                    <label for="degreeClass">Degree Class</label>
-                    <select name="" id="degreeClass" style="margin-left: 37px;" required>
+                    <label for="">Degree Class</label>
+                    <select name="" id="" style="margin-left: 37px;">
                         <option value=""></option>
-                        <option value="First Class Honors">First Class Honors</option>
-                        <option value="Second Class Upper">Second Class Upper</option>
-                        <option value="Second Class Lower">Second Class Lower</option>
-                        <option value="Third Class">Third Class</option>
+                        <option value="">First Class Honors</option>
+                        <option value="">Second Class Upper</option>
+                        <option value="">Second Class Lower</option>
+                        <option value="">Third Class</option>
                     </select><br>
                 </div>
                 <div class="formItem">
-                    <label for="code">Verification Code</label>
-                    <input type="text" id="code" style="margin-left: 10px; width: 36vh;" required>
+                    <label for="">Verification Code</label>
+                    <input type="text" style="margin-left: 10px; width: 36vh;">
                 </div>
-                <button type="submit"
-                    style="margin-top: 20px; margin-bottom: 20px; height: 30px; background-color: green; border-radius: 5px;"
-                    onclick="verifycert()">VERIFY</button>
-
-            </form>
-            <p id="message"></p>
-            <div id="resultDisplay" style="display: none;">
-                <p>Full Name:</p>
-                <p>Degree Title</p>
-                <p>Program</p>
-                <p>Degree Class</p>
-                <p>Year of Graduation</p>
-            </div>
+                <button type="submit" style="margin-top: 20px; margin-bottom: 20px; height: 30px; background-color: green; border-radius: 5px;">VERIFY</button>
+    
+            </form> 
         </div>
+
     </div>
-
-   
-
 </body>
-
-</html>   
+</html>
